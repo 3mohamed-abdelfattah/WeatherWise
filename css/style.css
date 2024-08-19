@@ -20,7 +20,7 @@ html {
 .container {
     display: flex;
     flex-direction: column;
-    height: 100%;
+    max-height: 100%;
 }
 
 /* Top Section */
@@ -128,12 +128,30 @@ html {
     font-family: "Josefin Sans", sans-serif;
     cursor: pointer;
     position: relative;
-    padding: 40px;
     bottom: 100px;
 }
 
 .forecast-today {
     text-align: center;
+    overflow: auto;
+    scroll-behavior: smooth;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+/* إخفاء شريط التمرير الافتراضي */
+.forecast-today::-webkit-scrollbar {
+    width: 8px; /* عرض شريط التمرير */
+    height: 8px;
+}
+
+.forecast-today::-webkit-scrollbar-thumb {
+    background-color: #bdc3c7; /* لون مقبض التمرير */
+    border-radius: 4px;
+}
+
+.forecast-today::-webkit-scrollbar-track {
+    background: transparent; /* لون مسار التمرير */
 }
 
 .forecast-hours {
