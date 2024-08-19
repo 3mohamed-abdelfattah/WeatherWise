@@ -2,6 +2,9 @@
 
 **WeatherWise** is a simple and stylish weather forecasting web application that displays hourly weather updates, current location, temperature, and weather conditions. The application adjusts the temperature dynamically throughout the day, simulating a realistic weather pattern where temperatures rise in the morning and decrease after the afternoon.
 
+![image](https://github.com/user-attachments/assets/f517d05a-9056-4bfb-899e-71c19623a99f)
+
+
 ## Features
 
 - **Location-Based Weather Updates:** Automatically detects the user's location and provides weather information specific to that location.
