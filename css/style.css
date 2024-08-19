@@ -5,6 +5,7 @@ body {
     text-decoration: none;
     scroll-behavior: smooth;
     font-family: "Josefin Sans", sans-serif;
+    color: #474747;
 }
 
 html {
@@ -35,17 +36,27 @@ html {
 }
 
 .date-location {
-    margin-right: 5%;
+    margin-right: 10%;
 }
 
 .date,
 .location,
 .temperature {
     margin: 0;
+    font-size: 20px;
+    line-height: 20px;
+    font-weight: 400;
+}
+
+.date {
+    font-weight: 700;
+    line-height: 30px;
 }
 
 .temperature {
-    font-size: 32px;
+    font-size: 40px;
+    line-height: 40px;
+    font-weight: 600;
 }
 
 .weather-icon {
@@ -66,8 +77,20 @@ html {
     background-color: #B5D6D6;
     background-image: url(/img/Clouds.png);
     background-size: cover;
-    padding: 1vh;
     text-align: center;
+}
+
+.day {
+    padding-top: 2%;
+    font-size: 28px;
+    line-height: 28px;
+    font-weight: 700;
+}
+
+.status {
+    font-size: 24px;
+    line-height: 24px;
+    font-weight: 400;
 }
 
 
