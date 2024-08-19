@@ -24,6 +24,7 @@ html {
     background-image: url(/img/Rains.png);
     background-repeat: no-repeat;
     background-position: center;
+    position: relative;
 }
 
 .location-info {
@@ -48,12 +49,16 @@ html {
 }
 
 .weather-icon {
-    display: flex;
-    justify-content: center;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    height: auto;
 }
 
 .weather-icon img {
-    width: 100px;
+    width: 100%;
+    height: auto;
 }
 
 /* Middle Section */
