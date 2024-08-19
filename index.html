@@ -1,38 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>WeatherWise</title>
+    <title>WeatherWise </title>
     <link rel="stylesheet" href="/css/style.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-      href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap"
-      rel="stylesheet"
-    />
+        href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap"
+        rel="stylesheet">
     <script src="/js/script.js"></script>
-  </head>
+</head>
 
-  <body>
+<body>
     <dev class="container">
-      <dev class="top-section">
-        <div class="location-info">
-          <div class="date-location">
-            <p class="date">July 24, 2024</p>
-            <p class="location">Bangalore, India</p>
-          </div>
-          <p class="temperature">18°C</p>
-        </div>
-        <div class="weather-icon">
-          <img src="/img/Rainy girl.png" alt="Icon" />
-        </div>
-      </dev>
-      <dev class="mid-section">
-        <h1 class="day">WEDNESDAY</h1>
-        <h4 class="status">Showers</h4>
-      </dev>
-      <dev class="end-section">3</dev>
+        <!-- TOP Section -->
+        <dev class="top-section">
+            <div class="location-info">
+                <div class="date-location">
+                    <p class="date">July 24, 2024</p>
+                    <p class="location">Bangalore, India</p>
+                </div>
+                <p class="temperature">18°C</p>
+            </div>
+            <div class="weather-icon">
+                <img src="/img/Rainy girl.png" alt="Icon" />
+            </div>
+        </dev>
+        <!-- MIDDLE Section -->
+        <dev class="mid-section">
+            <h1 class="day">WEDNESDAY</h1>
+            <h4 class="status">Showers</h4>
+        </dev>
+        <!-- END Section -->
+        <dev class="end-section">
+            <button class="arrow-left">‹ Yesterday</button>
+            <div class="forecast-today">
+                <p class="todayTxt">Today <br><span class="dotTxt">.</span></p>
+                <div class="forecast-hours">
+                    <div class="hour">
+                        <p>12 PM</p>
+                        <img src="/img/partly-sunny.png" />
+                        <p>21°C</p>
+                    </div>
+                    <div class="hour active">
+                        <p>2 PM</p>
+                        <img src="/img/rainy.png" />
+                        <p>18°C</p>
+                    </div>
+                    <div class="hour">
+                        <p>4 PM</p>
+                        <img src="/img/partly-sunny.png" />
+                        <p>19°C</p>
+                    </div>
+                    <div class="hour">
+                        <p>6 PM</p>
+                        <img src="/img/partly-sunny.png" />
+                        <p>22°C</p>
+                    </div>
+                    <div class="hour">
+                        <p>8 PM</p>
+                        <img src="/img/partly-sunny.png" />
+                        <p>20°C</p>
+                    </div>
+                    <div class="hour">
+                        <p>10 PM</p>
+                        <img src="/img/partly-sunny.png" />
+                        <p>20°C</p>
+                    </div>
+                    <div class="hour">
+                        <p>12 PM</p>
+                        <img src="/img/partly-sunny.png" />
+                        <p>20°C</p>
+                    </div>
+                    <div class="hour">
+                        <p>2 AM</p>
+                        <img src="/img/partly-sunny.png" />
+                        <p>20°C</p>
+                    </div>
+                    <div class="hour">
+                        <p>4 AM</p>
+                        <img src="/img/partly-sunny.png" />
+                        <p>20°C</p>
+                    </div>
+                </div>
+            </div>
+            <button class="arrow-right">Tomorrow ›</button>
+            </div>
+        </dev>
     </dev>
-  </body>
+</body>
+
 </html>

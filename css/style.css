@@ -6,10 +6,15 @@ body {
     scroll-behavior: smooth;
     font-family: "Josefin Sans", sans-serif;
     color: #474747;
+    background-color: #EAF4F4;
 }
 
 html {
     scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+    width: 0px;
 }
 
 .container {
@@ -96,7 +101,59 @@ html {
 
 /* End Section */
 .end-section {
+    border-radius: 60px 60px 0px 0px;
     background-color: #F5F9F9;
-    padding: 15vh;
+    display: flex;
+    justify-content: space-between;
+}
+
+.todayTxt {
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.dotTxt {
+    font-size: 40px;
+    font-weight: 900;
+}
+
+.arrow-left,
+.arrow-right {
+    background: none;
+    border: none;
+    font-size: 22px;
+    font-weight: 500;
+    color: #34495e;
+    cursor: pointer;
+    position: relative;
+    padding: 40px;
+    bottom: 100px;
+}
+
+.forecast-today {
     text-align: center;
+}
+
+.forecast-hours {
+    display: flex;
+    gap: 15px;
+    padding: 10px 0;
+}
+
+.hour {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 14px;
+    background-color: #E5F2F2;
+    border-radius: 44px;
+    border: #B5D6D6 solid 1px;
+    padding: 28px 22px 28px 22px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.hour.active {
+    background-color: #FEE68B;
+    border: #FBDC64 solid 1px;
+    position: relative;
+    bottom: 25px;
 }
