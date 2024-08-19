@@ -111,6 +111,11 @@ html {
 .todayTxt {
     font-size: 22px;
     font-weight: 700;
+    position: sticky;
+    left: 0;
+    background-color: #F5F9F9;
+    z-index: 1;
+    padding-right: 10px;
 }
 
 .dotTxt {
@@ -133,34 +138,21 @@ html {
 
 .forecast-today {
     text-align: center;
-    overflow: auto;
-    scroll-behavior: smooth;
+    overflow-x: auto;
+    white-space: nowrap;
     padding: 10px;
     border-radius: 8px;
-}
-
-/* إخفاء شريط التمرير الافتراضي */
-.forecast-today::-webkit-scrollbar {
-    width: 8px; /* عرض شريط التمرير */
-    height: 8px;
-}
-
-.forecast-today::-webkit-scrollbar-thumb {
-    background-color: #bdc3c7; /* لون مقبض التمرير */
-    border-radius: 4px;
-}
-
-.forecast-today::-webkit-scrollbar-track {
-    background: transparent; /* لون مسار التمرير */
+    position: relative;
 }
 
 .forecast-hours {
-    display: flex;
+    display: inline-flex;
     gap: 15px;
     padding: 10px 0;
 }
 
 .hour {
+    display: inline-block;
     font-weight: 400;
     font-size: 14px;
     line-height: 14px;
