@@ -9,7 +9,7 @@ async function getData() {
         return null;
     }
 
-    const url = `http://api.weatherapi.com/v1/current.json?key=eda8d98890214bab926190059241708&q=${latitude},${longitude}&day=3`;
+    const url = `http://api.weatherapi.com/v1/forecast.json?key=eda8d98890214bab926190059241708&q=${latitude},${longitude}&hour=24&days=3`;
     try {
         const response = await fetch(url);
         if (!response.ok) {
@@ -24,6 +24,7 @@ async function getData() {
         return null;
     }
 }
+
 
 function successCallback(position) {
     latitude = position.coords.latitude;
