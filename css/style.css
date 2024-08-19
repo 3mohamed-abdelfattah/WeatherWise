@@ -105,6 +105,7 @@ html {
     background-color: #F5F9F9;
     display: flex;
     justify-content: space-between;
+    padding-bottom: 40px;
 }
 
 .todayTxt {
