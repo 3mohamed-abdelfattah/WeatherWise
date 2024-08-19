@@ -1,4 +1,4 @@
-// Global variables for API Locations.
+// Global for API Locations.
 let latitude;
 let longitude;
 
@@ -40,17 +40,16 @@ async function fetchAndUpdateWeather(dayIndex) {
     const data = await getData();
     if (data) {
         // DOM content
-        const currentHourElem = document.querySelector('.current-hour');
-        const currentDegreeElem = document.querySelector('.current-degree');
         const dateRes = document.querySelector('.date');
         const locationRes = document.querySelector('.location');
         const dayRes = document.querySelector('.day');
         const conditionRes = document.querySelector('.status');
         const temperatureRes = document.querySelector('.temperature');
+        const forecastHoursElem = document.querySelector('.forecast-hours');
 
         // Convert date format and days
         const date = new Date();
-        date.setDate(date.getDate() + dayIndex); // Modify date based on dayIndex
+        date.setDate(date.getDate() + dayIndex);
         const options = { year: 'numeric', month: 'long', day: 'numeric' };
         const formatter = new Intl.DateTimeFormat('en-US', options);
         const formattedDate = formatter.format(date);
@@ -59,22 +58,57 @@ async function fetchAndUpdateWeather(dayIndex) {
 
         // Extract forecast data based on dayIndex
         const forecastData = data.forecast.forecastday[Math.max(0, Math.min(dayIndex, 2))];
+        const currentHour = new Date().getHours(); // Get the current hour
 
-        // Apply New Values
+        // Update main info
         if (dateRes && locationRes && dayRes && conditionRes && temperatureRes) {
             dateRes.textContent = formattedDate;
             locationRes.textContent = `${data.location.name}, ${data.location.country}`;
             dayRes.textContent = dayName;
             conditionRes.textContent = forecastData.day.condition.text;
             temperatureRes.textContent = `${Math.round(forecastData.day.avgtemp_c)}°C`;
-            currentHourElem.textContent = '12:00'; // Default hour, can be modified as needed
-            currentDegreeElem.textContent = `${Math.round(forecastData.day.avgtemp_c)}°C`;
+        }
+
+        // Clear the previous hours
+        forecastHoursElem.innerHTML = '';
+
+        let hourIndex = 0;
+        for (let i = 0; i < 10; i++) {
+            if (hourIndex >= forecastData.hour.length) break;
+
+            const hourData = forecastData.hour[hourIndex];
+            const hourElem = document.createElement('div');
+            hourElem.classList.add('hour');
+
+            const hourTime = new Date(hourData.time).getHours();
+            if (hourTime === currentHour) {
+                hourElem.classList.add('active');
+            }
+
+            const hourText = document.createElement('p');
+            hourText.textContent = `${hourTime % 12 || 12} ${hourTime < 12 ? 'AM' : 'PM'}`;
+
+            const hourImgSrc = hourData.condition.text.toLowerCase().includes('sunny')
+                ? '../img/partly-sunny.png'
+                : '../img/partly-sunny.png'; //Change if Icons Available
+
+            const hourImg = document.createElement('img');
+            hourImg.src = hourImgSrc;
+            const hourDegree = document.createElement('p');
+            hourDegree.textContent = `${Math.round(hourData.temp_c)}°C`;
+
+            hourElem.appendChild(hourText);
+            hourElem.appendChild(hourImg);
+            hourElem.appendChild(hourDegree);
+
+            forecastHoursElem.appendChild(hourElem);
+
+            hourIndex += 3; // Control How Hour Shown  ->( 12 , 3 , 6 ,9 )
         }
     }
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    // Handle Today, Tomorrow, and Yesterday buttons
     const todayBtn = document.querySelector('.todayTxt');
     const tomorrowBtn = document.getElementById('tomorrow');
     const yesterdayBtn = document.getElementById('yesterday');
@@ -98,7 +132,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Function to highlight the active button
     function highlightButton(activeBtn) {
         buttons.forEach((btn) => {
             if (btn === activeBtn) {
@@ -109,7 +142,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Get User Location
     if ("geolocation" in navigator) {
         navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
     } else {
