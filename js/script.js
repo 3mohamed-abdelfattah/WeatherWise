@@ -41,6 +41,8 @@ async function fetchAndUpdateWeather() {
     const data = await getData();
     if (data) {
         // DOM content
+        const currentHourElem = document.querySelector('.current-hour');
+        const currentDegreeElem = document.querySelector('.current-degree');
         const dateRes = document.querySelector('.date');
         const locationRes = document.querySelector('.location');
         const dayRes = document.querySelector('.day');
@@ -56,13 +58,21 @@ async function fetchAndUpdateWeather() {
         const dayIndex = date.getDay();
         const dayName = daysOfWeek[dayIndex];
 
+        // Extract current hour (only hour part)
+        const currentHour = new Date().toLocaleTimeString([], { hour: '2-digit' });
+
+        // Round temperature to nearest number
+        const roundedTemperature = Math.round(data.current.temp_c);
+
         // Apply New Values
         if (dateRes && locationRes && dayRes && conditionRes && temperatureRes) {
             dateRes.textContent = formattedDate;
             locationRes.textContent = `${data.location.name}, ${data.location.country}`;
             dayRes.textContent = dayName;
             conditionRes.textContent = data.current.condition.text;
-            temperatureRes.textContent = `${data.current.temp_c}°C`;
+            temperatureRes.textContent = `${roundedTemperature}°C`;
+            currentHourElem.textContent = currentHour;
+            currentDegreeElem.textContent = `${roundedTemperature}°C`;
         }
     }
 }
