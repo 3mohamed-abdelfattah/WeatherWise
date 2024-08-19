@@ -27,7 +27,7 @@ html {
 .top-section {
     padding: 24vh;
     background-color: #B5D6D6;
-    background-image: url(/img/Rains.png);
+    background-image: url(./img/Rains.png);
     background-repeat: no-repeat;
     background-position: center;
     position: relative;
@@ -80,7 +80,7 @@ html {
 /* Middle Section */
 .mid-section {
     background-color: #B5D6D6;
-    background-image: url(/img/Clouds.png);
+    background-image: url(./img/Clouds.png);
     background-size: cover;
     text-align: center;
 }
