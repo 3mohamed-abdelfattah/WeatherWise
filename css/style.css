@@ -116,6 +116,7 @@ html {
     background-color: #F5F9F9;
     z-index: 1;
     padding-right: 10px;
+    cursor: pointer;
 }
 
 .dotTxt {
@@ -160,7 +161,7 @@ html {
     border-radius: 44px;
     border: #B5D6D6 solid 1px;
     padding: 28px 22px 28px 22px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 6px 6px rgba(0, 0, 0, 0.1);
 }
 
 .hour.active {
@@ -168,4 +169,5 @@ html {
     border: #FBDC64 solid 1px;
     position: relative;
     bottom: 25px;
+    box-shadow: 0 9px 9px hsla(47, 98%, 77%, 0.5);
 }
