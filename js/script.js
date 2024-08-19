@@ -89,8 +89,8 @@ async function fetchAndUpdateWeather(dayIndex) {
             hourText.textContent = `${hourTime % 12 || 12} ${hourTime < 12 ? 'AM' : 'PM'}`;
 
             const hourImgSrc = hourData.condition.text.toLowerCase().includes('sunny')
-                ? '../img/partly-sunny.png'
-                : '../img/partly-sunny.png'; //Change if Icons Available
+                ? 'img/partly-sunny.png'
+                : 'img/partly-sunny.png'; //Change if Icons Available
 
             const hourImg = document.createElement('img');
             hourImg.src = hourImgSrc;
