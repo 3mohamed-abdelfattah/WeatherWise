@@ -23,18 +23,3 @@
 2. **Fetching Weather Data:** The app sends a request to a weather API, using the user's coordinates to fetch current weather data.
 3. **Dynamic Update:** The weather data, including the current temperature and condition, is updated dynamically on the web page.
 4. **Hourly Forecast:** The application simulates temperature changes throughout the day, displaying a realistic rise and fall in temperature.
-
-## Project Structure
-
-```plaintext
-├── index.html        # Main HTML file
-├── css/
-│   └── style.css     # CSS file for styling
-├── js/
-│   └── script.js     # JavaScript file for logic
-├── img/
-│   ├── partly-sunny.png
-│   ├── rainy.png
-│   └── Rainy girl.png
-└── README.md         # Project README file
-```
