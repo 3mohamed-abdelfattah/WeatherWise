@@ -103,7 +103,7 @@ async function fetchAndUpdateWeather(dayIndex) {
 
             forecastHoursElem.appendChild(hourElem);
 
-            hourIndex += 3; // Control How Hour Shown  ->( 12 , 3 , 6 ,9 )
+            hourIndex += 2; // Control How Hour Shown  ->( 12 , 3 , 6 ,9 )
         }
     }
 }
